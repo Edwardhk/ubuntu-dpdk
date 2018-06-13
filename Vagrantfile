@@ -55,8 +55,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.provider "virtualbox" do |vb|
       # Set easy to VM name
       vb.name = "gatekeeper"
-      # Assign 2 GB of memory
-      vb.memory = 2048
+      # Assign 4 GB of memory
+      vb.memory = 4096
       # Assign 4 cores
       vb.cpus = 4
 
