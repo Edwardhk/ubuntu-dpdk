@@ -18,7 +18,7 @@ sudo mount -t hugetlbfs nodev ${HUGEPAGE_MOUNT}
 
 # Install dependencies.
 sudo apt-get update
-sudo apt-get -y -q install git clang doxygen hugepages build-essential linux-headers-`uname -r` libmnl-dev libnuma-dev vim
+sudo apt-get -y -q install git clang doxygen hugepages build-essential linux-headers-`uname -r` libmnl-dev libnuma-dev vim linux-generic
  
 # Get code from gatekeeper repository.
 git clone -b vm --recursive https://github.com/cjdoucette/gatekeeper
