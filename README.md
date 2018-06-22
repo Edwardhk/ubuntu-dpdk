@@ -18,6 +18,7 @@ Remove the old virtualbox and install the latest one from the [Virtual Box Offic
     $ sudo apt-get remove --purge virtualbox
     $ wget "https://download.virtualbox.org/virtualbox/5.2.12/virtualbox-5.2_5.2.12-122591~Ubuntu~trusty_amd64.deb"
     $ sudo dpkg -i virtualbox-5.2_5.2.12-122591~Ubuntu~trusty_amd64.deb
+    $ sudo dpkg-reconfigure virtualbox-dkms
 
 
 Before adding the virtual machine, you need to setup networking on the host. We will create three separate host-only network adapters to interface with three interfaces in the VM: one that acts as a kernel-bound interface for debugging and two that act as DPDK-bound interfaces. These are in addition to the public network interface for the VM that uses NAT, which is always added by default.
