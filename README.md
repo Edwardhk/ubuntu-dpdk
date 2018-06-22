@@ -1,12 +1,24 @@
 # DPDK Ubuntu 14.04 Vagrant VM
 This project contains scripts and configuration files to create a Ubuntu 14.04 virtual machine with the Intel DPDK framework installed and fully configured.
 
-## Setup
-To set up a Vagrant virtual machine, first make sure that you have [Vagrant](http://www.vagrantup.com) installed and configured (this code has been tested with version 1.6.3).
+## Vagrant Setup (2.1.1)
 
-On an Ubuntu host, you can get vagrant using:
+It is recommended to update both vagrant and virtual box to latest verison, to avoid the freezing SSH issue
 
-    $ sudo apt-get install vagrant
+Remove the ubuntu version of vagrant and install it using the [Vagrant Official URL](https://www.vagrantup.com/downloads.html)
+
+    $ sudo apt-get remove vagrant
+    $ wget "https://releases.hashicorp.com/vagrant/2.1.1/vagrant_2.1.1_x86_64.deb"
+    $ sudo dpkg -i vagrant_2.1.1_x86_64.deb
+
+## Virtual Box Setup (5.2.12)
+
+Remove the old virtualbox and install the latest one from the [Virtual Box Official URL](https://download.virtualbox.org/virtualbox/5.2.12/virtualbox-5.2_5.2.12-122591~Ubuntu~trusty_amd64.deb)
+
+    $ sudo apt-get remove --purge virtualbox
+    $ wget "https://download.virtualbox.org/virtualbox/5.2.12/virtualbox-5.2_5.2.12-122591~Ubuntu~trusty_amd64.deb"
+    $ sudo dpkg -i virtualbox-5.2_5.2.12-122591~Ubuntu~trusty_amd64.deb
+
 
 Before adding the virtual machine, you need to setup networking on the host. We will create three separate host-only network adapters to interface with three interfaces in the VM: one that acts as a kernel-bound interface for debugging and two that act as DPDK-bound interfaces. These are in addition to the public network interface for the VM that uses NAT, which is always added by default.
 
